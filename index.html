@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Market - Online Grocery Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Big Market</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-buttons">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="auth-btn" id="loginBtn">Login</button>
+                <button class="auth-btn" id="signupBtn">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Fresh Groceries Delivered to Your Door</h2>
+            <p>Shop from our wide selection of fresh produce, household items, and more.</p>
+            <button class="cta-button">Start Shopping</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500" alt="Cold Drinks">
+                <h3>Cold Drinks</h3>
+                <p>Refreshing beverages</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500" alt="Skin Care">
+                <h3>Skin Care</h3>
+                <p>Personal care products</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="Electronics">
+                <h3>Electronics</h3>
+                <p>Gadgets and accessories</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500" alt="Vegetables">
+                <h3>Vegetables</h3>
+                <p>Fresh produce</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=500" alt="Washing Powder">
+                <h3>Washing Powder</h3>
+                <p>Laundry essentials</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500" alt="Ice Cream">
+                <h3>Ice Cream</h3>
+                <p>Sweet treats</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grocery Products Section -->
+    <section class="grocery-products">
+        <h2>Fresh Groceries</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500" alt="Fresh Tomatoes">
+                <h3>Fresh Tomatoes</h3>
+                <p class="product-price">₹40/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500" alt="Onions">
+                <h3>Onions</h3>
+                <p class="product-price">₹30/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500" alt="Potatoes">
+                <h3>Potatoes</h3>
+                <p class="product-price">₹25/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500" alt="Carrots">
+                <h3>Carrots</h3>
+                <p class="product-price">₹35/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500" alt="Capsicum">
+                <h3>Capsicum</h3>
+                <p class="product-price">₹45/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500" alt="Green Peas">
+                <h3>Green Peas</h3>
+                <p class="product-price">₹60/kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <div>
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div>
+                    <span>Delivery Fee:</span>
+                    <span id="deliveryFee">₹40</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We deliver fresh groceries and household items right to your doorstep.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@groceryhub.com</li>
+                    <li>Phone: +91 1234567890</li>
+                    <li>Address: 123 Grocery Street, City</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Big Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
